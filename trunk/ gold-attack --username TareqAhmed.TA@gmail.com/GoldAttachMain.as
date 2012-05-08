@@ -24,11 +24,11 @@
 			stage.addEventListener(KeyboardEvent.KEY_DOWN, plr.keyboardEvent) 
 			
 			for(var i: int = 0; i< randNum; i++){
-				var en: Enemy = new Enemy();
+				var en: EnemySoldier = new EnemySoldier();
 				addChild(en)
 				en.x = 500
 				en.y = Math.random()*500
-				this.addEventListener(Event.ENTER_FRAME, en.moveEnemy)
+				//this.addEventListener(Event.ENTER_FRAME, en.moveEnemy)
 			}
 			
 			trace(randNum)
