@@ -9,11 +9,14 @@
 	*/
 	
 	import flash.events.Event 
+	import flash.display.MovieClip
 	
 	public class EnemySoldier extends Enemy{
 		
-		public var soldierSpeed: int = 3;
+		public var soldierSpeed: int = Math.random()*10;
 		public var xBorder: int = 150;
+		public var borderContainer: MovieClip
+		public var gldBar1Cont: MovieClip
 		
 		public function EnemySoldier(){
 			// constructor code
@@ -39,11 +42,14 @@
 		override public function moveEnemy(e:Event): void {
 			/*Reason for "<=" : Because it's minusing a set amount, chances are, it's going to skip 
 			over the specific destination, so we check whether it has gone over specfied coordinate*/
-			trace("EnemySoldier move")
+			//trace("EnemySoldier move")
 			this.x-= soldierSpeed
-			if (this.x <= xBorder){	
+			
+			if (this.hitTestObject(borderContainer)){	
+				trace("hit")
 				soldierSpeed = -soldierSpeed
-				this.x += soldierSpeed;
+				this.x -= soldierSpeed;
+				
 				}
 		}
 		
