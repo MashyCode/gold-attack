@@ -8,16 +8,15 @@
 		
 		public var randNum: int = Math.random()* 10
 		
-		
 		public function GoldAttachMain() {
 			// constructor code
 			
 			//Declaring the border
 			var border: Border = new Border();
 			addChild(border)
-			border.x = 175
-			border.y = stage.stageHeight /2
-			//border.en = borderContainer
+			border.x = 175;
+			border.y = stage.stageHeight /2;
+			
 			
 			//Declaring GoldBars
 			var gldBar1: GoldBar = new GoldBar
@@ -41,31 +40,34 @@
 			gldBar4.y = 290
 			
 			var wep: GunBase = new GunBase();
-			addChild(wep)
-			wep.x = 50
-			wep.y = stage.stageHeight/2
-			stage.addEventListener(KeyboardEvent.KEY_DOWN, wep.keyboardEvent)
+			addChild(wep);
+			wep.x = 50;
+			wep.y = stage.stageHeight/2;
+			stage.addEventListener(KeyboardEvent.KEY_DOWN, wep.keyboardEvent1)
 			
+			//Declaring the Bullet
+			var bullet:Bullet=new Bullet();
+			
+			
+			
+			//Declaring Player
 			var plr: Player = new Player();
 			addChild(plr)
-			plr.x = 35
-			plr.y = stage.stageHeight/2
+			plr.x = 35;
+			plr.y = 250;
 			stage.addEventListener(KeyboardEvent.KEY_DOWN, plr.keyboardEvent) 
 			
-			for(var i: int = 0; i< randNum; i++){
+			for(var i: int = 0; i< randNum; i++)
+			{
 				var en: EnemySoldier = new EnemySoldier();
 				addChild(en)
 				en.x = 600
-				/*if(en.x <= 400){
-					en.x = Math.random()*800
-				}*/
 				en.y = Math.random()*400
-				//this.addEventListener(Event.ENTER_FRAME, en.moveEnemy)
 				en.borderContainer=border;
 				en.gldBar1Cont=gldBar1;
 			}
 			
-			trace(randNum)
+			
 		}
 	}
 	

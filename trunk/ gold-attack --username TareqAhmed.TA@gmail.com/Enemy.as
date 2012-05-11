@@ -5,20 +5,18 @@
 	
 	public class Enemy extends MovieClip {
 
-		//public var tempSpeed:int =2
-		public var itemContainer: MovieClip
-		//public var enSpeed: int
-		//public var enBorder: int
+      public var itemContainer: MovieClip
 		
-		public function Enemy() {
+	public function Enemy() {
 			// constructor code
 			this.addEventListener(Event.ENTER_FRAME, moveEnemy)
 			
 		}
 		
-		public function moveEnemy(e:Event): void {
-			trace("Enemy class: Move")
-			}
+		public function moveEnemy(e:Event): void
+		{
+		  trace("Enemy class: Move")
+		}
 		
 
 

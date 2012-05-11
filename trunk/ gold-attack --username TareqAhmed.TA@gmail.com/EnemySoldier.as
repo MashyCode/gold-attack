@@ -13,19 +13,12 @@
 	
 	public class EnemySoldier extends Enemy{
 		
-		public var soldierSpeed: int = Math.random()*10;
+		public var soldierSpeed: int = Math.random()*5;
 		public var xBorder: int = 150;
 		public var borderContainer: MovieClip
 		public var gldBar1Cont: MovieClip
 		
-		public function EnemySoldier(){
-			// constructor code
-			// If enemy reaches border, commence check
-			
-		//	enSpeed = soldierSpeed;
-		//	enBorder = xBorder
-		}
-			
+		
 		public function checkGoldPresent(): void {
 			/* Checks whether there's gold in player's cache. If true, call function
 			"takeGold" and then run back. If no gold, run back*/
@@ -39,18 +32,23 @@
 		}
 
 		
-		override public function moveEnemy(e:Event): void {
+		override public function moveEnemy(e:Event): void 
+		{
 			/*Reason for "<=" : Because it's minusing a set amount, chances are, it's going to skip 
 			over the specific destination, so we check whether it has gone over specfied coordinate*/
 			//trace("EnemySoldier move")
+			
 			this.x-= soldierSpeed
 			
-			if (this.hitTestObject(borderContainer)){	
+			if (this.hitTestObject(borderContainer))
+			{	
 				trace("hit")
 				soldierSpeed = -soldierSpeed
 				this.x -= soldierSpeed;
 				
-				}
+			}
+			
+			
 		}
 		
 	}// Class
